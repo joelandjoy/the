@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="theme-color" content="#101820" />
+    <title>GeeeTA Khandu — Open-World Prototype</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="hud">
+        <div class="brand"><span class="brand-mark">GK</span><div><strong>GeeeTA Khandu</strong><small>KHANDU COLONY · PROTOTYPE</small></div></div>
+        <div class="mission"><span class="eyebrow">CURRENT OBJECTIVE</span><strong id="objective">Explore the neighborhood</strong><small id="mission-hint">Find the nearby landmarks</small></div>
+        <div class="status"><span id="mode">ON FOOT</span><span id="speed">0 km/h</span></div>
+      </div>
+      <div id="crosshair">+</div>
+      <div id="interaction" class="hidden">Press <kbd>E</kbd> to interact</div>
+      <div id="toast" class="hidden"></div>
+      <div id="minimap-wrap"><div class="mini-title">LOCAL MAP</div><canvas id="minimap" width="180" height="180"></canvas><div class="mini-legend"><span>● You</span><span>◆ Landmark</span></div></div>
+      <div id="help"><strong>CONTROLS</strong><span>WASD Move / Drive</span><span>Shift Run · Space Jump</span><span>E Interact / Enter car</span><span>Mouse drag Rotate camera</span><span>Esc Pause</span></div>
+      <div id="mobile-controls" class="hidden">
+        <div class="dpad"><button data-key="KeyW">▲</button><div><button data-key="KeyA">◀</button><button data-key="KeyS">▼</button><button data-key="KeyD">▶</button></div></div>
+        <div class="mobile-actions"><button data-key="ShiftLeft">RUN</button><button data-key="Space">JUMP</button><button id="mobile-interact">INTERACT</button></div>
+      </div>
+      <div id="pause" class="overlay hidden"><section><span class="eyebrow">GAME PAUSED</span><h1>Take a breather.</h1><p>This is an early playable prototype. Map details are placeholders pending verification.</p><button id="resume">Resume game</button><button id="restart" class="secondary">Restart prototype</button><label><input id="audio-toggle" type="checkbox" checked /> Sound effects enabled</label></section></div>
+      <div id="loading" class="overlay"><section><div class="loader"></div><h1>Loading Khandu Colony</h1><p>Preparing the first playable neighborhood…</p></section></div>
+      <div id="error" class="overlay hidden"><section><h1>Could not start the game</h1><p id="error-message">Please refresh and try again.</p></section></div>
+      <canvas id="game"></canvas>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
